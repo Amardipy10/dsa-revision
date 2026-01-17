@@ -19,7 +19,7 @@ using namespace std;
 //     }
 // }
 
-class Solution {
+clas Solution {
 public:
     bool isPalindrome(long x) {
     long r=0;
