@@ -1,6 +1,6 @@
 //brute
 
-#include<iostream>
+#inclde<iostream>
 #include<vector>
 #include<unordered_map>
 using namespace std;
