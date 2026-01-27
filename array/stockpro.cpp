@@ -21,13 +21,21 @@ int stock(vector<int> v){
 
 //optimal
 
-int maxProfit(vector<int>& prices) {
-    int minPrice = INT_MAX;
-    int maxProfit = 0;
+class Solution {
+public:
+    int maxProfit(vector<int>& arr) {
+        int minPrice=INT_MAX;
+        int maxmProfit=0;
+        for(int i:arr){
+            if(i<minPrice){
+                minPrice=i;
+            }
+            else{
+                int profit=i-minPrice;
+                maxmProfit=max(profit,maxmProfit);
 
-    for (int price : prices) {
-        minPrice = min(minPrice, price);           // best buy till now
-        maxProfit = max(maxProfit, price - minPrice); // best profit
+            }
+        }
+        return maxmProfit;
     }
-    return maxProfit;
-}
+};
