@@ -1,0 +1,152 @@
+🔹 1. length() / size()
+
+👉 Returns number of characters in the string.
+
+string s = "hello";
+cout << s.length();   // 5
+cout << s.size();     // 5
+
+
+📌 length() and size() are same.
+
+🔹 2. push_back(char)
+
+👉 Adds a character at the end.
+
+string s = "hi";
+s.push_back('!');
+cout << s;   // hi!
+
+🔹 3. pop_back()
+
+👉 Removes the last character.
+
+string s = "hello";
+s.pop_back();
+cout << s;   // hell
+
+🔹 4. append(string)
+
+👉 Adds another string at the end.
+
+string s = "hello";
+s.append(" world");
+cout << s;   // hello world
+
+
+✅ Same as:
+
+s += " world";
+
+🔹 5. clear()
+
+👉 Deletes all characters.
+
+string s = "abc";
+s.clear();
+cout << s;   // empty string
+
+🔹 6. empty()
+
+👉 Checks if string is empty.
+
+string s = "";
+if(s.empty())
+    cout << "Empty";
+
+
+Returns true or false.
+
+🔹 7. substr(start, length)
+
+👉 Returns a substring.
+
+string s = "programming";
+cout << s.substr(0, 7);   // program
+cout << s.substr(3, 4);   // gram
+
+
+📌 Very common in interviews.
+
+🔹 8. find(char/string)
+
+👉 Finds first occurrence.
+Returns index or string::npos if not found.
+
+string s = "hello";
+cout << s.find('e');     // 1
+cout << s.find("ll");    // 2
+
+
+If not found:
+
+if(s.find('x') == string::npos)
+    cout << "Not found";
+
+🔹 9. erase(pos, len)
+
+👉 Removes characters from string.
+
+string s = "abcdef";
+s.erase(2, 3);
+cout << s;   // abf
+
+🔹 10. insert(pos, string)
+
+👉 Inserts string at given position.
+
+string s = "helo";
+s.insert(2, "l");
+cout << s;   // hello
+
+🔹 11. replace(pos, len, string)
+
+👉 Replaces part of string.
+
+string s = "hello world";
+s.replace(6, 5, "C++");
+cout << s;   // hello C++
+
+🔹 12. compare(string)
+
+👉 Compares two strings lexicographically.
+
+string a = "abc", b = "abd";
+
+cout << a.compare(b); // negative (a < b)
+
+
+Returns:
+
+0 → equal
+
+<0 → smaller
+
+>0 → larger
+
+🔹 13. Access characters using index
+string s = "hello";
+cout << s[0];   // h
+cout << s.at(1); // e
+
+
+📌 at() is safer (checks bounds).
+
+🔹 14. Convert case (using loop)
+
+C++ has no direct function, use toupper / tolower.
+
+string s = "AbC";
+for(char &c : s)
+    c = tolower(c);
+
+cout << s; // abc
+
+🔹 15. String ↔ Integer
+stoi (string → int)
+string s = "123";
+int x = stoi(s);  // 123
+
+to_string (int → string)
+int x = 45;
+string s = to_string(x); // "45"

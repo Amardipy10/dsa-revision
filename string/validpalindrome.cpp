@@ -1,28 +1,36 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
+using namespace std;
+
 class Solution {
 public:
 
-    bool isAlphaNum(char ch){
-        if((ch>='0' && ch<='9') || (tolower(ch)>='a' && tolower(ch)<='z')){
-            return true;
+    bool isAlpha(char ch){
+            if(ch>='0'&&ch<='9'||tolower(ch)>='a'&&tolower(ch)<='z'){
+                return true;
+            }
+            return false;
         }
-        return false;
-    }
-    bool isPalindrome(string s) {
-        int st=0,end=s.length()-1;
-        while(st<end){
-            if(!isAlphaNum(s[st])){
-                st++;continue;
+    bool  isPalindrome(string s) {
+        int start=0;
+        int end=s.size()-1;
+        while(start<end){
+            if(!isAlpha(s[start])){
+                start++;
             }
-            if(!isAlphaNum(s[end])){
-                end--;continue;
+            else if(!isAlpha(s[end])){
+                end--;
             }
-            if(tolower(s[st])!=tolower(s[end])){
+            else if(tolower(s[start])!=tolower(s[end])){
                 return false;
             }
-            st++; end--;
+            else{
+                start++;
+                end--;
+            }
         }
         return true;
-    }
-};
+        }
+        
+        
+    };
