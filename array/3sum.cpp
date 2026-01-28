@@ -35,8 +35,6 @@ vector<vector<int>> threeSum(vector<int>& v) {
     sort(v.begin(), v.end());
 
     for (int i = 0; i < n; i++) {
-
-        // Skip duplicate first elements
         if (i > 0 && v[i] == v[i - 1]) continue;
 
         int left = i + 1;
@@ -48,7 +46,6 @@ vector<vector<int>> threeSum(vector<int>& v) {
             if (sum == 0) {
                 ans.push_back({v[i], v[left], v[right]});
 
-                // Skip duplicate left & right
                 while (left < right && v[left] == v[left + 1]) left++;
                 while (left < right && v[right] == v[right - 1]) right--;
 
