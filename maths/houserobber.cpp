@@ -1,17 +1,14 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        int total=0;
-        int total2=0;
-        int n=nums.size();
-        for(int i=0;i<n;i++){
-            if(i%2==0){
-                total+=nums[i];
-            }
-            else{
-                total2+=nums[i];
-            }
+        int p1=0;
+        int p2=0;
+        for(int i:nums){
+            int curr=max(p1,p2+i);
+            p2=p1;
+            p1=curr;
         }
-        return max(total,total2);
+        return p1;
+        
     }
 };
