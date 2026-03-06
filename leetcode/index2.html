@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Validate Form</title>
+    <script>
+        function validateForm(){
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var phone=document.getElementById("phone").value;
+
+            if(name==""){
+                alert("enter name");
+                return false;
+            }
+            if(!email.includes("@")||!email.includes(".")){
+                alert("invalid email");
+                return false
+            }
+            if(phone.length!=10||isNaN(phone)){
+                alert("enter valid number");
+                return false;
+            }
+            alert("form submitted successfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Gate 2026</h2>
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br><br>
+        Email:<input type="email" id="email"> <br><br>
+        Phone:<input type="text"id="phone"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
