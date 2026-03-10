@@ -1,25 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Gate</title>
+<title>GATE Registration</title>
 </head>
 <body>
-    <h2>Gate 2026</h2>
-    <form>
-        Name:<input type="text"name="name"placeholder="enter name"><br><br>
-        Email:<input type="email"name="email"placeholder="enter your email"><br><br>
-        Password:<input type="password"name="password"placeholder="enter password"><br><br>
-        Gender:<input type="radio" name="gender">Male
-        <input type="radio" name="gender">Female <br><br>
-        Branch:<select>
-            <option>cse</option>
-            <option>ENTC</option>
-            <option>Mech</option>
-        </select><br><br>
 
-        Photo Upload:<input type="file"><br><br>
-        <input type="submit" value="register">
-    </form>
-    
+<h2>GATE 2024 Registration Form</h2>
+
+<form>
+
+Name:
+<input type="text" name="name" placeholder="Enter your name"><br><br>
+
+Email:
+<input type="email" name="email" placeholder="Enter your email"><br><br>
+
+Password:
+<input type="password" name="password" placeholder="Enter password"><br><br>
+
+Gender:
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<br><br>
+
+Address:<br>
+<textarea name="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
+<br><br>
+
+Subjects:<br>
+<input type="checkbox" name="subject" value="DS"> Data Structures<br>
+<input type="checkbox" name="subject" value="Algo"> Algorithms<br>
+<input type="checkbox" name="subject" value="OS"> Operating Systems
+<br><br>
+
+Branch:
+<select name="branch">
+<option value="">Select Branch</option>
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="ME">ME</option>
+</select>
+<br><br>
+
+Upload Photo:
+<input type="file" name="photo"><br><br>
+
+<input type="submit" value="Register">
+<input type="reset" value="Reset">
+
+</form>
+
 </body>
 </html>

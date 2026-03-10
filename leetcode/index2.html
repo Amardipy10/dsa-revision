@@ -1,38 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Validate Form</title>
-    <script>
-        function validateForm(){
-            var name=document.getElementById("name").value;
-            var email=document.getElementById("email").value;
-            var phone=document.getElementById("phone").value;
+<title>Registration Form Validation</title>
 
-            if(name==""){
-                alert("enter name");
-                return false;
-            }
-            if(!email.includes("@")||!email.includes(".")){
-                alert("invalid email");
-                return false
-            }
-            if(phone.length!=10||isNaN(phone)){
-                alert("enter valid number");
-                return false;
-            }
-            alert("form submitted successfully");
-            return true;
-        }
-    </script>
+<script>
+function validateForm() {
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var mobile = document.getElementById("mobile").value;
+
+  if (name == "") {
+    alert("Name cannot be empty");
+    return false;
+  }
+
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Invalid Email");
+    return false;
+  }
+
+  if (mobile.length != 10 || isNaN(mobile)) {
+    alert("Enter valid 10-digit Mobile Number");
+    return false;
+  }
+
+  alert("Form Submitted Successfully!");
+  return true;
+}
+</script>
+
 </head>
+
 <body>
-    <h2>Gate 2026</h2>
-    <form onsubmit="return validateForm()">
-        Name: <input type="text" id="name"><br><br>
-        Email:<input type="email" id="email"> <br><br>
-        Phone:<input type="text"id="phone"><br><br>
-        <input type="submit" value="Submit">
-    </form>
-    
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+Name:
+<input type="text" id="name" name="name" placeholder="Enter your name">
+<br><br>
+
+Email:
+<input type="email" id="email" name="email" placeholder="Enter your email">
+<br><br>
+
+Mobile:
+<input type="tel" id="mobile" name="mobile" placeholder="Enter 10 digit mobile number">
+<br><br>
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+</form>
+
+
 </body>
 </html>
