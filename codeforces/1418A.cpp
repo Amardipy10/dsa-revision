@@ -1,21 +1,12 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void solve() {
-    long long x, y, k;
-    cin >> x >> y >> k;
-    long long needed_sticks = (k * y) + k - 1;
-    long long stick_trades = (needed_sticks + x - 2) / (x - 1);
-    long long total_trades = stick_trades + k;
-    cout << total_trades << "\n";
-}
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int t;
-    cin >> t;
-    while (t--) {
-        solve();
+int main(){
+    int t; cin>>t;
+    while(t--){
+        int x,y,k;
+        cin>>x>>y>>k;
+
+        int ans=((k+k*y-1)/x-1)+k;
+        cout<<ans<<endl;
     }
-    return 0;
 }
