@@ -1,42 +1,27 @@
 #include <iostream>
 #include <string>
-#include <unordered_set>
+#include <vector>
 using namespace std;
-unordered_set<string> unique_strings;
-void stringcount(string s) {
-    if (unique_strings.count(s)) {
-        return;
+void solve() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    vector<bool> seen(26, false);
+    long long ans = 0;
+    for (int i = 0; i < n; ++i) {
+        int char_index = s[i] - 'a';
+        if (!seen[char_index]) {
+            seen[char_index] = true;
+            ans += (n - i);
+        }
     }
-    unique_strings.insert(s);
-    if (s.length() == 0) {
-        return;
-    }
-    if (s.length() == 1) {
-        string s1 = s;
-        s1.erase(0, 1);
-        stringcount(s1);
-        return;
-    }
-    string s1 = s;
-    s1.erase(0, 1);
-    stringcount(s1);
-    string s2 = s;
-    s2.erase(1, 1);
-    stringcount(s2);
+    cout << ans <<endl;
 }
-
 int main() {
     int t;
     cin >> t;
-
     while (t--) {
-        int n; 
-        cin >> n;
-        string s;
-        cin >> s;
-        unique_strings.clear(); 
-        stringcount(s);
-        cout << unique_strings.size() << endl;
+        solve();
     }
-    return 0;
 }
